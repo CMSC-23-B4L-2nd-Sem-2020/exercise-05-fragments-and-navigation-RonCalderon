@@ -28,13 +28,17 @@ import android.graphics.drawable.ColorDrawable
 
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.done_button).setOnClickListener {
             addNickname(it)
+
+        }
+
+        findViewById<TextView>(R.id.reset_button).setOnClickListener {
+            resetBoard()
         }
 
         findViewById<TextView>(R.id.nickname_text).setOnClickListener {
@@ -47,6 +51,49 @@ class MainActivity : AppCompatActivity() {
           }
         }
     }
+
+    /**
+     * Click handler for the DONE button.
+     * Hides the EditText and the DONE button.
+     * Sets the EditText content to the TextView and displays it.
+     */
+    private fun addNickname(view: View) {
+        val editText = findViewById<EditText>(R.id.nickname_edit)
+        val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
+        showBoard()
+
+        nicknameTextView.text = editText.text
+        editText.visibility = View.GONE
+        view.visibility = View.GONE
+        nicknameTextView.visibility = View.VISIBLE
+
+        // Hide the keyboard.
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.hideSoftInputFromWindow(view.windowToken, 0)
+
+    }
+
+    /**
+     * Click handler for the nickname TextView.
+     * Displays the EditText and the DONE button.
+     * Hides the nickname TextView.
+     */
+    private fun updateNickname(view: View) {
+        val editText = findViewById<EditText>(R.id.nickname_edit)
+        val doneButton = findViewById<Button>(R.id.done_button)
+        hideBoard()
+        editText.visibility = View.VISIBLE
+        doneButton.visibility = View.VISIBLE
+        view.visibility = View.INVISIBLE
+
+        // Set the focus to the edit text.
+        editText.requestFocus()
+
+        // Show the keyboard.
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        imm.showSoftInput(editText, 0)
+    }
+
 
 
     //returns boxes list
@@ -84,58 +131,55 @@ class MainActivity : AppCompatActivity() {
         return arrayBoxes
     }
 
-    /**
-     * Click handler for the DONE button.
-     * Hides the EditText and the DONE button.
-     * Sets the EditText content to the TextView and displays it.
-     */
-    private fun addNickname(view: View) {
-        val editText = findViewById<EditText>(R.id.nickname_edit)
-        val nicknameTextView = findViewById<TextView>(R.id.nickname_text)
+    //adds 1 to the click counter
+    private fun updateClickCount() {
+        val countClick = findViewById<TextView>(R.id.click_counter)
+        var countString = countClick.text.toString()
+        var count = countString.toInt() + 1
+        countClick.text = count.toString()
+    }
+
+    //sets all boxes and click counter to be visibility.visible
+    private fun showBoard(){
+        val arrayBoxes = getBoxes()
         val nameClick = findViewById<TextView>(R.id.click_counter)
         val countClick = findViewById<TextView>(R.id.click_label)
-        val arrayBoxes = getBoxes()
+        val resetButton = findViewById<TextView>(R.id.reset_button)
+        resetButton.visibility = View.VISIBLE
+        nameClick.visibility = View.VISIBLE
+        countClick.visibility = View.VISIBLE
         for(number in 0..24) {
             arrayBoxes[number].visibility = View.VISIBLE
         }
-
-        nicknameTextView.text = editText.text
-        editText.visibility = View.GONE
-        view.visibility = View.GONE
-        nicknameTextView.visibility = View.VISIBLE
-        nameClick.visibility = View.VISIBLE
-        countClick.visibility = View.VISIBLE
-        // Hide the keyboard.
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.hideSoftInputFromWindow(view.windowToken, 0)
-
     }
 
-    /**
-     * Click handler for the nickname TextView.
-     * Displays the EditText and the DONE button.
-     * Hides the nickname TextView.
-     */
-    private fun updateNickname(view: View) {
-        val editText = findViewById<EditText>(R.id.nickname_edit)
-        val doneButton = findViewById<Button>(R.id.done_button)
+    //sets all boxes and click counter to be visibility.gone
+    private fun hideBoard(){
+        val arrayBoxes = getBoxes()
+        val nameClick = findViewById<TextView>(R.id.click_counter)
+        val countClick = findViewById<TextView>(R.id.click_label)
+        val resetButton = findViewById<TextView>(R.id.reset_button)
+        resetButton.visibility = View.GONE
+        nameClick.visibility = View.GONE
+        countClick.visibility = View.GONE
+        for(number in 0..24) {
+            arrayBoxes[number].visibility = View.GONE
+        }
+    }
 
-        editText.visibility = View.VISIBLE
-        doneButton.visibility = View.VISIBLE
-        view.visibility = View.INVISIBLE
-
-        // Set the focus to the edit text.
-        editText.requestFocus()
-
-        // Show the keyboard.
-        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        imm.showSoftInput(editText, 0)
+    //sets all boxes to be yellow
+    private fun resetBoard(){
+        val arrayBoxes = getBoxes()
+        val countClick = findViewById<TextView>(R.id.click_counter)
+        countClick.visibility = View.VISIBLE
+        countClick.text = "0"
+        for(number in 0..24) {
+            arrayBoxes[number].setBackgroundResource(R.color.my_lightOn)
+        }
     }
 
     //check current color, change the surrounding to the opposite color (black and yellow)
     private fun flickLights(arr: List<TextView> ,number: Int) {
-        val cd = arr[number].background as ColorDrawable
-        val colorCode = cd.color
         val middle = intArrayOf(6,7,8,11,12,13,16,17,18)
         val middleTop =  intArrayOf(5,10,15)
         val middleLeft = intArrayOf(1,2,3)
@@ -145,6 +189,8 @@ class MainActivity : AppCompatActivity() {
         val topRight = 20
         val bottomLeft = 4
         val bottomRight = 24
+        val cd = arr[number].background as ColorDrawable
+        val colorCode = cd.color
         //color code equivalent of yellow
         if(colorCode == -256){
             arr[number].setBackgroundResource(R.color.my_lightOff)
@@ -209,6 +255,8 @@ class MainActivity : AppCompatActivity() {
             flickLightsBasic(arr,number-1) //top
             flickLightsBasic(arr,number-5) //left
         }
+        updateClickCount()
+        checkWin(arr)
     }
 
     //change only the given box to change color (for the surrounding flickerLights)
@@ -222,5 +270,21 @@ class MainActivity : AppCompatActivity() {
         else{
             arr[number].setBackgroundResource(R.color.my_lightOn)
         }
+    }
+
+    //checks if there are no more yellow boxes
+    private fun checkWin(arr: List<TextView>) {
+        for(number in 0..24) {
+            val cd = arr[number].background as ColorDrawable
+            val colorCode = cd.color
+            //color code equivalent of yellow
+            if(colorCode == -256){
+                return
+            }
+        }
+        val winner = findViewById<TextView>(R.id.name_text)
+        val count = findViewById<TextView>(R.id.click_counter)
+        winner.text = "YOU WIN! CLICKS: " + count.text
+        resetBoard()
     }
 }
