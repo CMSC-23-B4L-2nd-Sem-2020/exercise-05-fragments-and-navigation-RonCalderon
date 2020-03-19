@@ -6,8 +6,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <fragment
-            android:id="@+id/GameFragment"
-            android:name="com.android.example.aboutme.GameFragment"
+            android:id="@+id/WinFragment"
+            android:name="com.android.example.aboutme.WinFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             />

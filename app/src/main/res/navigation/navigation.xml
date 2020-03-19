@@ -11,4 +11,16 @@
         android:label="fragment_start"
         tools:layout="@layout/fragment_start_screen" >
     </fragment>
+
+    <fragment
+        android:id="@+id/GameFragment"
+        android:name="com.android.example.aboutme.GameFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game" />
+
+    <fragment
+        android:id="@+id/WinFragment"
+        android:name="com.android.example.aboutme.WinFragment"
+        android:label="GameFragment"
+        tools:layout="@layout/fragment_game" />
 </navigation>
