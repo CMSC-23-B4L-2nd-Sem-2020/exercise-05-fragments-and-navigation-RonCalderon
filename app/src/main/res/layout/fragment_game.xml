@@ -8,6 +8,39 @@
         xmlns:tools="http://schemas.android.com/tools">
 
         <TextView
+            android:id="@+id/nickname_text"
+            style="@style/NameStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:paddingBottom="@dimen/small_padding"
+            android:textAlignment="center"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/done_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/roboto"
+            android:text="@string/done"
+            app:layout_constraintEnd_toEndOf="@+id/nickname_edit"
+            app:layout_constraintStart_toStartOf="@+id/nickname_edit"
+            app:layout_constraintTop_toBottomOf="@+id/nickname_edit"
+            tools:visibility="invisible"/>
+
+
+        <TextView
             android:id="@+id/click_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,7 +104,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_2"
         app:layout_constraintEnd_toStartOf="@+id/box_6"
         app:layout_constraintHorizontal_bias="0.5"
@@ -87,7 +120,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_3"
         app:layout_constraintEnd_toStartOf="@+id/box_7"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,7 +136,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_4"
         app:layout_constraintEnd_toStartOf="@+id/box_8"
         app:layout_constraintHorizontal_bias="0.5"
@@ -119,7 +152,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_5"
         app:layout_constraintEnd_toStartOf="@+id/box_9"
         app:layout_constraintHorizontal_bias="0.5"
@@ -136,7 +169,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/box_10"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +184,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_7"
         app:layout_constraintEnd_toStartOf="@+id/box_11"
         app:layout_constraintHorizontal_bias="0.5"
@@ -167,7 +200,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_8"
         app:layout_constraintEnd_toStartOf="@+id/box_12"
         app:layout_constraintHorizontal_bias="0.5"
@@ -183,7 +216,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_9"
         app:layout_constraintEnd_toStartOf="@+id/box_13"
         app:layout_constraintHorizontal_bias="0.5"
@@ -199,7 +232,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_10"
         app:layout_constraintEnd_toStartOf="@+id/box_14"
         app:layout_constraintHorizontal_bias="0.5"
@@ -216,7 +249,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/box_15"
         app:layout_constraintHorizontal_bias="0.5"
@@ -232,7 +265,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_12"
         app:layout_constraintEnd_toStartOf="@+id/box_16"
         app:layout_constraintHorizontal_bias="0.5"
@@ -248,7 +281,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_13"
         app:layout_constraintEnd_toStartOf="@+id/box_17"
         app:layout_constraintHorizontal_bias="0.5"
@@ -264,7 +297,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_14"
         app:layout_constraintEnd_toStartOf="@+id/box_18"
         app:layout_constraintHorizontal_bias="0.5"
@@ -280,7 +313,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_15"
         app:layout_constraintEnd_toStartOf="@+id/box_19"
         app:layout_constraintHorizontal_bias="0.5"
@@ -297,7 +330,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/box_20"
         app:layout_constraintHorizontal_bias="0.5"
@@ -313,7 +346,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_17"
         app:layout_constraintEnd_toStartOf="@+id/box_21"
         app:layout_constraintHorizontal_bias="0.5"
@@ -329,7 +362,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_18"
         app:layout_constraintEnd_toStartOf="@+id/box_22"
         app:layout_constraintHorizontal_bias="0.5"
@@ -345,7 +378,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_19"
         app:layout_constraintEnd_toStartOf="@+id/box_23"
         app:layout_constraintHorizontal_bias="0.5"
@@ -361,7 +394,7 @@
         android:layout_marginTop="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_20"
         app:layout_constraintEnd_toStartOf="@+id/box_24"
         app:layout_constraintHorizontal_bias="0.5"
@@ -378,7 +411,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/box_25"
         app:layout_constraintHorizontal_bias="0.5"
@@ -395,7 +428,7 @@
         android:layout_marginEnd="24dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_22"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -412,7 +445,7 @@
         android:layout_marginEnd="24dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -429,7 +462,7 @@
         android:layout_marginEnd="24dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -446,7 +479,7 @@
         android:layout_marginEnd="24dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toTopOf="@+id/box_25"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -464,7 +497,7 @@
         android:layout_marginBottom="32dp"
         android:background="@color/my_lightOn"
         android:clickable="false"
-        android:visibility="invisible"
+        
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
