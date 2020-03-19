@@ -25,10 +25,13 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.graphics.drawable.ColorDrawable
+import android.view.LayoutInflater
+import android.view.ViewGroup
 
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -39,19 +42,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
         for(number in 0..24) {
             getBoxes()[number].setOnClickListener {
-               flickLights(getBoxes(),number)
-          }
+                flickLights(getBoxes(),number)
+            }
         }
     }
 
-    /**
-     * Click handler for the DONE button.
-     * Hides the EditText and the DONE button.
-     * Sets the EditText content to the TextView and displays it.
-     */
+
 
 
 

@@ -72,9 +72,16 @@ class StartFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentStartScreenBinding>(inflater,
             R.layout.fragment_start_screen,container,false)
+
+        /**
+         * Click handler for the DONE button.
+         * Hides the EditText and the DONE button.
+         * Sets the EditText content to the TextView and displays it.
+         */
         binding.doneButton.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment)
             addNickname(binding.doneButton,inflater,container,savedInstanceState)
+            view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment)
+
         }
 
         binding.nicknameText.setOnClickListener {
