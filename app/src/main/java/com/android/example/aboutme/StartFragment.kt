@@ -37,12 +37,9 @@ class StartFragment : Fragment() {
          */
         //click done to go to the gameboard
         binding.doneButton.setOnClickListener { view : View ->
-<<<<<<< HEAD
             view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment)
-=======
             var bundle = bundleOf("PASSED_NICKNAME" to binding.nicknameText.text)
             view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment,bundle)
->>>>>>> parent of 859fa25... docs:removed unecessary code
 
         }
         return binding.root
