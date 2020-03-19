@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
+import com.android.example.aboutme.databinding.FragmentGameBinding
 import com.android.example.aboutme.databinding.FragmentWinBinding
 
 /**
@@ -28,7 +29,6 @@ class WinFragment : Fragment() {
             view.findNavController().navigate(R.id.action_WinFragment_to_StartFragment)
 
         }
-
         return binding.root
     }
 }

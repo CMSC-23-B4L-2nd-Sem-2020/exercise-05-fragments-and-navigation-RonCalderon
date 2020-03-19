@@ -10,7 +10,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/click2_counter"
+            android:id="@+id/click_counter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
@@ -41,7 +41,7 @@
             android:text="@string/win"
             android:textAlignment="center"
             android:textSize="36sp"
-            app:layout_constraintBottom_toTopOf="@+id/click2_counter"
+            app:layout_constraintBottom_toTopOf="@+id/click_counter"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

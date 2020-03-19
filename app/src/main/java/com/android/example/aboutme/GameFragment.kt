@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import com.android.example.aboutme.databinding.FragmentGameBinding
@@ -359,6 +360,8 @@ class GameFragment : Fragment() {
                 }
             }
         }
+
+        var bundle = bundleOf("TOTAL_CLICKS" to binding.clickCounter.text)
 
         return binding.root
     }

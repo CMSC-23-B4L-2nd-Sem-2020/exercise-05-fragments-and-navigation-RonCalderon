@@ -13,6 +13,23 @@
         android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/name_text2"
+            style="@style/NameStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:gravity="center_horizontal"
+            android:text="@string/name"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
             android:id="@+id/nickname_text2"
             style="@style/NameStyle"
             android:layout_width="0dp"
@@ -51,23 +68,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/name_text2"
-            style="@style/NameStyle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="center_horizontal"
-            android:text="@string/name"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/reset_button"
             style="@style/Widget.AppCompat.Button.Colored"
@@ -75,8 +75,10 @@
             android:layout_height="36dp"
             android:layout_marginTop="75dp"
             android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:background="@color/colorPrimary"
             android:text="@string/reset_label"
+            app:layout_constraintBottom_toTopOf="@+id/box_21"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -90,9 +92,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_2"
             app:layout_constraintEnd_toStartOf="@+id/box_6"
             app:layout_constraintHorizontal_bias="0.5"
@@ -109,9 +110,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_3"
             app:layout_constraintEnd_toStartOf="@+id/box_7"
             app:layout_constraintHorizontal_bias="0.5"
@@ -128,9 +128,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_4"
             app:layout_constraintEnd_toStartOf="@+id/box_8"
             app:layout_constraintHorizontal_bias="0.5"
@@ -147,9 +146,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_5"
             app:layout_constraintEnd_toStartOf="@+id/box_9"
             app:layout_constraintHorizontal_bias="0.5"
@@ -167,9 +165,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/box_10"
             app:layout_constraintStart_toStartOf="parent"
@@ -185,9 +182,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_7"
             app:layout_constraintEnd_toStartOf="@+id/box_11"
             app:layout_constraintHorizontal_bias="0.5"
@@ -204,9 +200,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_8"
             app:layout_constraintEnd_toStartOf="@+id/box_12"
             app:layout_constraintHorizontal_bias="0.5"
@@ -223,9 +218,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_9"
             app:layout_constraintEnd_toStartOf="@+id/box_13"
             app:layout_constraintHorizontal_bias="0.5"
@@ -242,9 +236,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_10"
             app:layout_constraintEnd_toStartOf="@+id/box_14"
             app:layout_constraintHorizontal_bias="0.5"
@@ -262,9 +255,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/box_15"
             app:layout_constraintHorizontal_bias="0.5"
@@ -281,9 +273,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_12"
             app:layout_constraintEnd_toStartOf="@+id/box_16"
             app:layout_constraintHorizontal_bias="0.5"
@@ -300,9 +291,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_13"
             app:layout_constraintEnd_toStartOf="@+id/box_17"
             app:layout_constraintHorizontal_bias="0.5"
@@ -319,9 +309,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_14"
             app:layout_constraintEnd_toStartOf="@+id/box_18"
             app:layout_constraintHorizontal_bias="0.5"
@@ -338,9 +327,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_15"
             app:layout_constraintEnd_toStartOf="@+id/box_19"
             app:layout_constraintHorizontal_bias="0.5"
@@ -358,9 +346,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/box_20"
             app:layout_constraintHorizontal_bias="0.5"
@@ -377,9 +364,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_17"
             app:layout_constraintEnd_toStartOf="@+id/box_21"
             app:layout_constraintHorizontal_bias="0.5"
@@ -396,9 +382,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_18"
             app:layout_constraintEnd_toStartOf="@+id/box_22"
             app:layout_constraintHorizontal_bias="0.5"
@@ -415,9 +400,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_19"
             app:layout_constraintEnd_toStartOf="@+id/box_23"
             app:layout_constraintHorizontal_bias="0.5"
@@ -434,9 +418,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_20"
             app:layout_constraintEnd_toStartOf="@+id/box_24"
             app:layout_constraintHorizontal_bias="0.5"
@@ -454,9 +437,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/box_25"
             app:layout_constraintHorizontal_bias="0.5"
@@ -474,9 +456,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_22"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -494,9 +475,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_23"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -514,9 +494,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_24"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -534,9 +513,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toTopOf="@+id/box_25"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -555,9 +533,8 @@
             android:background="@color/my_lightOn"
 
 
-            android:clickable="true"
-            android:focusable="auto"
-            android:focusableInTouchMode="true"
+            android:clickable="false"
+            android:focusableInTouchMode="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
