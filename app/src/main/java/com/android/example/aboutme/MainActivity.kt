@@ -25,28 +25,16 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.graphics.drawable.ColorDrawable
-import android.view.LayoutInflater
-import android.view.ViewGroup
 
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
 
-        findViewById<TextView>(R.id.reset_button).setOnClickListener {
-            resetBoard()
-        }
 
-
-        for(number in 0..24) {
-            getBoxes()[number].setOnClickListener {
-                flickLights(getBoxes(),number)
-            }
-        }
     }
 
 
