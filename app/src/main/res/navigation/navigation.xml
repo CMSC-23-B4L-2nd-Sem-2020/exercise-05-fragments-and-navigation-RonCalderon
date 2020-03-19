@@ -10,17 +10,28 @@
         android:name="com.android.example.aboutme.StartFragment"
         android:label="fragment_start"
         tools:layout="@layout/fragment_start_screen" >
+        <action
+            android:id="@+id/action_StartFragment_to_GameFragment"
+            app:destination="@id/GameFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/GameFragment"
         android:name="com.android.example.aboutme.GameFragment"
         android:label="GameFragment"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_GameFragment_to_WinFragment"
+            app:destination="@id/WinFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/WinFragment"
         android:name="com.android.example.aboutme.WinFragment"
         android:label="GameFragment"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_WinFragment_to_StartFragment"
+            app:destination="@id/StartFragment" />
+    </fragment>
 </navigation>
