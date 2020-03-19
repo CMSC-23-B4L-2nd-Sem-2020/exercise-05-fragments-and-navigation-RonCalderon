@@ -86,8 +86,8 @@ class StartFragment : Fragment() {
          * Sets the EditText content to the TextView and displays it.
          */
         binding.doneButton.setOnClickListener { view : View ->
-            var bundle = bundleOf("PASSED_NICKNAME" to binding.nicknameText.text)
-            view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment,bundle)
+            //var bundle = bundleOf("PASSED_NICKNAME" to binding.nicknameText.text)
+            view.findNavController().navigate(R.id.action_StartFragment_to_GameFragment)
 
         }
 
