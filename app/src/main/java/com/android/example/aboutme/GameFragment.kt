@@ -312,7 +312,6 @@ class GameFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-        //binding.box1.setBackgroundResource(R.color.my_lightOff)
         val box1 = binding.box1
         val box2 = binding.box2
         val box3 = binding.box3
@@ -349,6 +348,7 @@ class GameFragment : Fragment() {
                 arrayBoxes[number].setBackgroundResource(R.color.my_lightOn)
             }
         }
+
         for(number in 0..24) {
             arrayBoxes[number].setOnClickListener { view : View ->
                 flickLights(arrayBoxes,number,inflater,container,savedInstanceState)
@@ -356,12 +356,13 @@ class GameFragment : Fragment() {
                 var count = countString.toInt() + 1
                 countClick.text = count.toString()
                 if(checkWin(arrayBoxes)){
-                    view.findNavController().navigate(R.id.action_GameFragment_to_WinFragment)
+                    var bundle = bundleOf("TOTAL_CLICKS" to binding.clickCounter.text)
+                    view.findNavController().navigate(R.id.action_GameFragment_to_WinFragment,bundle)
                 }
             }
         }
 
-        var bundle = bundleOf("TOTAL_CLICKS" to binding.clickCounter.text)
+
 
         return binding.root
     }
