@@ -15,6 +15,7 @@ import androidx.navigation.findNavController
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import com.android.example.aboutme.databinding.FragmentGameBinding
 import com.android.example.aboutme.databinding.FragmentStartScreenBinding
 
 /**
@@ -26,14 +27,16 @@ class StartFragment : Fragment() {
                             savedInstanceState: Bundle?) {
         val binding = DataBindingUtil.inflate<FragmentStartScreenBinding>(inflater,
             R.layout.fragment_start_screen,container,false)
+        val binding2 = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
+            R.layout.fragment_game,container,false)
         val editText = binding.nicknameEdit
-        val nicknameTextView = binding.nicknameText
+        val nicknameTextView = binding2.nicknameText2
         //showBoard()
 
         nicknameTextView.text = editText.text
         editText.visibility = View.GONE
         view.visibility = View.GONE
-        nicknameTextView.visibility = View.VISIBLE
+        //nicknameTextView.visibility = View.VISIBLE
 
         // Hide the keyboard.
         //val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
@@ -88,7 +91,7 @@ class StartFragment : Fragment() {
             updateNickname(binding.nicknameText,inflater,container,savedInstanceState)
         }
 
-        return inflater.inflate(R.layout.fragment_start_screen, container, false)
+        return binding.root
     }
 
 

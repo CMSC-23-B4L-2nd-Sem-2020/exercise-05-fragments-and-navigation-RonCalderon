@@ -8,7 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.findNavController
 import com.android.example.aboutme.databinding.FragmentGameBinding
+import kotlinx.android.synthetic.main.fragment_game.*
 
 /**
  * A simple [Fragment] subclass.
@@ -16,7 +18,7 @@ import com.android.example.aboutme.databinding.FragmentGameBinding
 class GameFragment : Fragment() {
 
     //returns boxes list
-    private fun getBoxes(inflater: LayoutInflater, container: ViewGroup?,
+    /*private fun getBoxes(inflater: LayoutInflater, container: ViewGroup?,
                          savedInstanceState: Bundle?): MutableList<TextView> {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
@@ -50,6 +52,7 @@ class GameFragment : Fragment() {
         val arrayBoxes = mutableListOf(box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,
             box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,
             box21,box22,box23,box24,box25)
+
         return arrayBoxes
     }
 
@@ -69,7 +72,35 @@ class GameFragment : Fragment() {
                           savedInstanceState: Bundle?) {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-        val arrayBoxes = getBoxes(inflater,container,savedInstanceState)
+        val box1 = binding.box1
+        val box2 = binding.box2
+        val box3 = binding.box3
+        val box4 = binding.box4
+        val box5 = binding.box5
+        val box6 = binding.box6
+        val box7 = binding.box7
+        val box8 = binding.box8
+        val box9 = binding.box9
+        val box10 = binding.box10
+        val box11 = binding.box11
+        val box12 = binding.box12
+        val box13 = binding.box13
+        val box14 = binding.box14
+        val box15 = binding.box15
+        val box16 = binding.box16
+        val box17 = binding.box17
+        val box18 = binding.box18
+        val box19 = binding.box19
+        val box20 = binding.box20
+        val box21 = binding.box21
+        val box22 = binding.box22
+        val box23 = binding.box23
+        val box24 = binding.box24
+        val box25 = binding.box25
+
+        val arrayBoxes = mutableListOf(box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,
+            box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,
+            box21,box22,box23,box24,box25)
         val nameClick = binding.clickCounter
         val countClick = binding.clickLabel
         val resetButton = binding.resetButton
@@ -86,7 +117,35 @@ class GameFragment : Fragment() {
                           savedInstanceState: Bundle?) {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-        val arrayBoxes = getBoxes(inflater,container,savedInstanceState)
+        val box1 = binding.box1
+        val box2 = binding.box2
+        val box3 = binding.box3
+        val box4 = binding.box4
+        val box5 = binding.box5
+        val box6 = binding.box6
+        val box7 = binding.box7
+        val box8 = binding.box8
+        val box9 = binding.box9
+        val box10 = binding.box10
+        val box11 = binding.box11
+        val box12 = binding.box12
+        val box13 = binding.box13
+        val box14 = binding.box14
+        val box15 = binding.box15
+        val box16 = binding.box16
+        val box17 = binding.box17
+        val box18 = binding.box18
+        val box19 = binding.box19
+        val box20 = binding.box20
+        val box21 = binding.box21
+        val box22 = binding.box22
+        val box23 = binding.box23
+        val box24 = binding.box24
+        val box25 = binding.box25
+
+        val arrayBoxes = mutableListOf(box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,
+            box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,
+            box21,box22,box23,box24,box25)
         val nameClick = binding.clickCounter
         val countClick = binding.clickLabel
         val resetButton = binding.resetButton
@@ -96,21 +155,49 @@ class GameFragment : Fragment() {
         for(number in 0..24) {
             arrayBoxes[number].visibility = View.GONE
         }
-    }
 
     //sets all boxes to be yellow
     private fun resetBoard(inflater: LayoutInflater, container: ViewGroup?,
                            savedInstanceState: Bundle?) {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-        val arrayBoxes = getBoxes(inflater,container,savedInstanceState)
+        val box1 = binding.box1
+        val box2 = binding.box2
+        val box3 = binding.box3
+        val box4 = binding.box4
+        val box5 = binding.box5
+        val box6 = binding.box6
+        val box7 = binding.box7
+        val box8 = binding.box8
+        val box9 = binding.box9
+        val box10 = binding.box10
+        val box11 = binding.box11
+        val box12 = binding.box12
+        val box13 = binding.box13
+        val box14 = binding.box14
+        val box15 = binding.box15
+        val box16 = binding.box16
+        val box17 = binding.box17
+        val box18 = binding.box18
+        val box19 = binding.box19
+        val box20 = binding.box20
+        val box21 = binding.box21
+        val box22 = binding.box22
+        val box23 = binding.box23
+        val box24 = binding.box24
+        val box25 = binding.box25
+
+        val arrayBoxes = mutableListOf(box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,
+            box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,
+            box21,box22,box23,box24,box25)
         val countClick = binding.clickCounter
         countClick.visibility = View.VISIBLE
         countClick.text = "0"
         for(number in 0..24) {
             arrayBoxes[number].setBackgroundResource(R.color.my_lightOn)
         }
-    }
+    }    }*/
+
 
     //check current color, change the surrounding to the opposite color (black and yellow)
     private fun flickLights(arr: List<TextView> ,number: Int, inflater: LayoutInflater, container: ViewGroup?,
@@ -190,8 +277,7 @@ class GameFragment : Fragment() {
             flickLightsBasic(arr,number-1) //top
             flickLightsBasic(arr,number-5) //left
         }
-        updateClickCount(inflater,container,savedInstanceState)
-        checkWin(arr,inflater,container,savedInstanceState)
+        checkWin(arr)
     }
 
     //change only the given box to change color (for the surrounding flickerLights)
@@ -208,22 +294,16 @@ class GameFragment : Fragment() {
     }
 
     //checks if there are no more yellow boxes
-    private fun checkWin(arr: List<TextView>,inflater: LayoutInflater, container: ViewGroup?,
-    savedInstanceState: Bundle?) {
-        val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
-            R.layout.fragment_game,container,false)
+    private fun checkWin(arr: List<TextView>):Boolean{
         for(number in 0..24) {
             val cd = arr[number].background as ColorDrawable
             val colorCode = cd.color
             //color code equivalent of yellow
             if(colorCode == -256){
-                return
+                return false
             }
         }
-        val winner = binding.nameText
-        val count = binding.clickCounter
-        winner.text = "YOU WIN! CLICKS: " + count.text
-        resetBoard(inflater,container,savedInstanceState)
+        return true
     }
 
 
@@ -231,17 +311,56 @@ class GameFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-        // Inflate the layout for this fragment
+
+        //binding.box1.setBackgroundResource(R.color.my_lightOff)
+        val box1 = binding.box1
+        val box2 = binding.box2
+        val box3 = binding.box3
+        val box4 = binding.box4
+        val box5 = binding.box5
+        val box6 = binding.box6
+        val box7 = binding.box7
+        val box8 = binding.box8
+        val box9 = binding.box9
+        val box10 = binding.box10
+        val box11 = binding.box11
+        val box12 = binding.box12
+        val box13 = binding.box13
+        val box14 = binding.box14
+        val box15 = binding.box15
+        val box16 = binding.box16
+        val box17 = binding.box17
+        val box18 = binding.box18
+        val box19 = binding.box19
+        val box20 = binding.box20
+        val box21 = binding.box21
+        val box22 = binding.box22
+        val box23 = binding.box23
+        val box24 = binding.box24
+        val box25 = binding.box25
+
+        val arrayBoxes = mutableListOf(box1,box2,box3,box4,box5,box6,box7,box8,box9,box10,
+            box11,box12,box13,box14,box15,box16,box17,box18,box19,box20,
+            box21,box22,box23,box24,box25)
+        val countClick = binding.clickCounter
         binding.resetButton.setOnClickListener {
-            resetBoard(inflater,container,savedInstanceState)
-        }
-
-
-        for(number in 0..24) {
-            getBoxes(inflater,container,savedInstanceState)[number].setOnClickListener {
-                flickLights(getBoxes(inflater,container,savedInstanceState),number,inflater,container,savedInstanceState)
+            countClick.text = "0"
+            for(number in 0..24) {
+                arrayBoxes[number].setBackgroundResource(R.color.my_lightOn)
             }
         }
-        return inflater.inflate(R.layout.fragment_start_screen, container, false)
+        for(number in 0..24) {
+            arrayBoxes[number].setOnClickListener { view : View ->
+                flickLights(arrayBoxes,number,inflater,container,savedInstanceState)
+                var countString = countClick.text.toString()
+                var count = countString.toInt() + 1
+                countClick.text = count.toString()
+                if(checkWin(arrayBoxes)){
+                    view.findNavController().navigate(R.id.action_GameFragment_to_WinFragment)
+                }
+            }
+        }
+
+        return binding.root
     }
 }

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/GameFragment">
+    app:startDestination="@id/StartFragment">
 
     <fragment
         android:id="@+id/StartFragment"
@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/GameFragment"
         android:name="com.android.example.aboutme.GameFragment"
-        android:label="GameFragment"
+        android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_GameFragment_to_WinFragment"
@@ -28,10 +28,6 @@
     <fragment
         android:id="@+id/WinFragment"
         android:name="com.android.example.aboutme.WinFragment"
-        android:label="GameFragment"
-        tools:layout="@layout/fragment_game" >
-        <action
-            android:id="@+id/action_WinFragment_to_StartFragment"
-            app:destination="@id/StartFragment" />
-    </fragment>
+        android:label="fragment_win"
+        tools:layout="@layout/fragment_game" />
 </navigation>
