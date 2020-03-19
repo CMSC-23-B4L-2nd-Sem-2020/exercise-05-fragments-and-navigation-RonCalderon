@@ -29,6 +29,7 @@ class WinFragment : Fragment() {
             view.findNavController().navigate(R.id.action_WinFragment_to_StartFragment)
 
         }
+        //receive the number of total clicks
         binding.clickCounter.text = arguments?.getString("TOTAL_CLICKS")
         return binding.root
     }
