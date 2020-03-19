@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_start_screen" >
         <action
             android:id="@+id/action_StartFragment_to_GameFragment"
-            app:destination="@+id/GameFragment" />
+            app:destination="@+id/GameFragment"
+            app:popUpTo="@+id/StartFragment" />
     </fragment>
 
     <fragment
@@ -22,12 +23,18 @@
         tools:layout="@layout/fragment_game" >
         <action
             android:id="@+id/action_GameFragment_to_WinFragment"
-            app:destination="@id/WinFragment" />
+            app:destination="@id/WinFragment"
+            app:popUpTo="@+id/StartFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/WinFragment"
         android:name="com.android.example.aboutme.WinFragment"
         android:label="fragment_win"
-        tools:layout="@layout/fragment_game" />
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/action_WinFragment_to_StartFragment"
+            app:destination="@id/StartFragment"
+            app:popUpTo="@+id/StartFragment" />
+    </fragment>
 </navigation>

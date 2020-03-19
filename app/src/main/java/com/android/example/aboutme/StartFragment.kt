@@ -27,10 +27,8 @@ class StartFragment : Fragment() {
                             savedInstanceState: Bundle?) {
         val binding = DataBindingUtil.inflate<FragmentStartScreenBinding>(inflater,
             R.layout.fragment_start_screen,container,false)
-        val binding2 = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
-            R.layout.fragment_game,container,false)
         val editText = binding.nicknameEdit
-        val nicknameTextView = binding2.nicknameText2
+        val nicknameTextView = binding.nicknameText
         //showBoard()
 
         nicknameTextView.text = editText.text

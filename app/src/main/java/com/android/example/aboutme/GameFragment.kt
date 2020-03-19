@@ -311,7 +311,6 @@ class GameFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         val binding = DataBindingUtil.inflate<FragmentGameBinding>(inflater,
             R.layout.fragment_game,container,false)
-
         //binding.box1.setBackgroundResource(R.color.my_lightOff)
         val box1 = binding.box1
         val box2 = binding.box2
